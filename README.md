@@ -15,8 +15,8 @@ Repositório com API desenvolvida em NodeJs com rotas Express e conectando no ba
 * Para executar rode os comandos abaixo:
 
     docker-compose up -d
-    docker exec -it nodeapp /bin/bash
-    node server.js
+    docker exec -it nodeapp /bin/bash 
+    node server.js 
     
     
 ### Testar Endpoints ###
@@ -24,8 +24,8 @@ Repositório com API desenvolvida em NodeJs com rotas Express e conectando no ba
 * Para executar rode os comandos abaixo em um terminal. 
   Arquivo json do postman esta na raiz do projeto:
     
-    npm install newman
-    newman run "Node - MariaDB.postman_collection.json" -r cli,json
+    npm install newman  
+    newman run "Node - MariaDB.postman_collection.json" -r cli,json  
 
 ### Conectar no MariaDB ###
     
