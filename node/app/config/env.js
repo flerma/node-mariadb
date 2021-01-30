@@ -1,8 +1,8 @@
 const env = {
     database: 'nodedb',
     username: 'root',
-    password: 'Password123!',
-    host: 'localhost',
+    password: 'root',
+    host: 'mariadb',
     dialect: 'mysql',
     pool: {
         max: 5,

@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  nodeapp:
+    build: 
+      context: ./node
+    container_name: nodeapp
+    entrypoint: dockerize -wait tcp://mariadb:3306 -timeout 20s docker-entrypoint.sh
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./node:/usr/src/app
+    tty: true
+    networks:
+      - node-mariadb-network
+    depends_on:
+      - mariadb
+  
+  mariadb:
+    image: mariadb/server:10.4
+    container_name: mariadb
+    restart: always
+    tty: true
+    volumes: 
+      - ./mariadb:/var/lib/mariadb
+    environment: 
+      - MYSQL_DATABASE=nodedb
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=root
+    networks:
+      - node-mariadb-network
+
+networks:
+  node-mariadb-network:
+    driver: bridge
