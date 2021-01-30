@@ -14,9 +14,9 @@ Repositório com API desenvolvida em NodeJs com rotas Express e conectando no ba
 
 * Para executar rode os comandos abaixo:
 
-    docker-compose up -d
-    docker exec -it nodeapp /bin/bash 
-    node server.js 
+    docker-compose up -d  
+    docker exec -it nodeapp /bin/bash  
+    node server.js  
     
     
 ### Testar Endpoints ###
